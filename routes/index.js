@@ -3,9 +3,9 @@
 const express = require('express')
 
 //importar routers
-const productsRouter = require('./products');
-const usersRouter = require("./users")
-const categoriesRouter = require("./categories")
+const productsRouter = require('./products.router');
+const usersRouter = require("./users.router")
+const categoriesRouter = require("./categories.router")
 
 /* function routerApi(app){ Sin versionar API
   //genero una ruta por cada uno de los routers

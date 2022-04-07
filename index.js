@@ -6,7 +6,7 @@ const routerApi = require("./routes")
 const {logErrors,errorHandler,boomErrorHandler} = require('./middlewares/error.handler')
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 /**Crear un middlewares
@@ -19,7 +19,7 @@ const whitelist = ['https://myapp.com',"http://127.0.0.1:5500"]
 // para q funcione lo anterior
 const options ={
   origin: (origin,callback)=>{
-    if(whitelist.includes(origin)){
+    if(whitelist.includes(origin) || !origin){
       callback(null,true);// (no hay error, acceso permitido)
     }else{
       callback(new Error('no permitido'));

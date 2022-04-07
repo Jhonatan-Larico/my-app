@@ -14,7 +14,7 @@ function logErrors(err,req,res,next){
 // Detecta un error pero crea un formato para devolverlo al cliente
 // Recuerda asi no se utilise "next"  se debe poner por que es la forma que detecta que es un middleware del tipo error
 function errorHandler(err,req,res,next){
-  console.log("errorHandler")
+  //console.log("errorHandler")
   // En que cambia?
   // Aqui ya no quiero seguir al siguiente middleware, si hay un error quiero que sea el punto final
   res.status(500).json({
